@@ -1,0 +1,215 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data Representation: Caesar Cipher</title>
+
+    <style>
+        body { font-family: Helvetica, Arial, sans-serif; font-size: 14pt;}
+
+        .letter {
+            width: 25px; 
+            height: 25px; 
+            margin: 0px; 
+            display: run-in; 
+            float:left; 
+            border: 0px; 
+            font-family: monospace; 
+            font-size: 24px;
+
+        }
+        .alphabet {
+            width: 950px; 
+            height: 30px; 
+            float:left; 
+        }
+        .textContainer {
+            width: 1000px; 
+        }
+        .footer {
+            width: 1000px; 
+            display: run-in; 
+            float:left; 
+            font-size: 14px;
+        }
+
+        .on_rhs {
+            float: right;
+        }
+    </style>
+    <script>
+        function update_shift_key(passedSelectField)
+        {
+            //Local var - shift_value from the drop down
+            let shiftValue = parseInt(passedSelectField.options[passedSelectField.selectedIndex].value);
+            console.log(shiftValue)
+
+            let strAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            let arrAlphabet = strAlphabet.split("")
+
+            let counter=0;
+
+            for (let element of document.getElementById("cipher").children) {
+                document.getElementById(element.id).innerText=arrAlphabet[counter + shiftValue];
+                counter++;
+            }
+
+
+        }
+
+        function setup()
+        {
+            update_shift_key(document.getElementById("shift_value"));
+
+        }
+
+</script>
+</head>
+<body onload="setup();">
+
+    <div class="textContainer">
+        <h1>Data Representation</h1>
+        <h2>Caesar Cipher</h2>
+
+        <p>The Caesar Cipher a simple <b>encryption</b> technique used since the time of Roman Empire, named after Julius Caesar.  It is a type of <b>substitution cipher</b> in which each letter in the alphabet is shifted by a certain number of positions down the alphabet. <br /><br />
+        The Caesar Cipher is suitable for beginners to learn about encryption, but It is not secure against modern decryption methods such as a brute force attack.</p>
+
+        <p>On this interactive page, you'll be able to see how this cipher works, trying it out for yourself, helping you understand how <b>encryption</b> can be used to keep messages secret.</p>
+        <p>&nbsp;</p>
+        <p>Shift:<br />
+            <select onChange="update_shift_key(this);" id="shift_value">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+                <option>23</option>
+                <option>24</option>
+                <option>25</option>
+                <option>26</option>
+            </select>
+        </p>
+        </div>
+
+    <div class="container">
+        <div class="alphabet" id="plain-hdr">Plain Text</div>
+        <div class="alphabet" id="plain">
+            <div class="letter" id="let1_1">A</div>
+            <div class="letter" id="let1_2">B</div>
+            <div class="letter" id="let1_3">C</div>
+            <div class="letter" id="let1_4">D</div>
+            <div class="letter" id="let1_5">E</div>
+            <div class="letter" id="let1_6">F</div>
+            <div class="letter" id="let1_7">G</div>
+            <div class="letter" id="let1_8">H</div>
+            <div class="letter" id="let1_9">I</div>
+            <div class="letter" id="let1_10">J</div>
+            <div class="letter" id="let1_11">K</div>
+            <div class="letter" id="let1_12">L</div>
+            <div class="letter" id="let1_13">M</div>
+            <div class="letter" id="let1_14">N</div>
+            <div class="letter" id="let1_15">O</div>
+            <div class="letter" id="let1_16">P</div>
+            <div class="letter" id="let1_17">Q</div>
+            <div class="letter" id="let1_18">R</div>
+            <div class="letter" id="let1_19">S</div>
+            <div class="letter" id="let1_20">T</div>
+            <div class="letter" id="let1_21">U</div>
+            <div class="letter" id="let1_22">V</div>
+            <div class="letter" id="let1_23">W</div>
+            <div class="letter" id="let1_24">X</div>
+            <div class="letter" id="let1_25">Y</div>
+            <div class="letter" id="let1_26">Z</div>
+        </div>
+        <div class="alphabet" id="spacer">
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+            <div class="letter">&ShortDownArrow;</div>
+        </div>
+        <div class="alphabet" id="cipher">
+            <div class="letter" id="let2_1"></div>
+            <div class="letter" id="let2_2"></div>
+            <div class="letter" id="let2_3"></div>
+            <div class="letter" id="let2_4"></div>
+            <div class="letter" id="let2_5"></div>
+            <div class="letter" id="let2_6"></div>
+            <div class="letter" id="let2_7"></div>
+            <div class="letter" id="let2_8"></div>
+            <div class="letter" id="let2_9"></div>
+            <div class="letter" id="let2_10"></div>
+            <div class="letter" id="let2_11"></div>
+            <div class="letter" id="let2_12"></div>
+            <div class="letter" id="let2_13"></div>
+            <div class="letter" id="let2_14"></div>
+            <div class="letter" id="let2_15"></div>
+            <div class="letter" id="let2_16"></div>
+            <div class="letter" id="let2_17"></div>
+            <div class="letter" id="let2_18"></div>
+            <div class="letter" id="let2_19"></div>
+            <div class="letter" id="let2_20"></div>
+            <div class="letter" id="let2_21"></div>
+            <div class="letter" id="let2_22"></div>
+            <div class="letter" id="let2_23"></div>
+            <div class="letter" id="let2_24"></div>
+            <div class="letter" id="let2_25"></div>
+            <div class="letter" id="let2_26"></div>
+        </div>
+        <div class="alphabet" id="cipher-hdr">Cipher Text</div>
+    </div>
+
+
+
+
+    <div class="footer">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <h3>Teaching Information</h3>
+        <p><img class="on_rhs" src="images/caesar-cipher-wheels.png" height="150" width="150" alt="Photograph shoign some examples of printed Caesar Cipher wheels using the template from bobmckay.com"/> Teaching the Caesar Cipher can be taught as an unplugged task using a set of rotating disks or a set of cards, known as a scytale, along with mini-white boards. </p><p>This is the <a target="new" href="https://bobmckay.com/coding-for-kids/caesar-cipher-wheel-printable-pdf/">template I use for the Caesar Cipher wheels</a>. But if you do not have time for this preparation, use this online resource so that you can teach it without the assosicated pritning and administration overheads.</p>
+
+        <p>&nbsp;</p>
+    </div>
+
+
+</body>
+</html>
